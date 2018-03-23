@@ -1,7 +1,7 @@
 class Survivor < ApplicationRecord
 	
-	has_many :reports # when I report another survivor
-	has_many :reporteds, foreign_key: :reporter_id, class_name: "Report" # when I am reported by a survivor
+	has_many :reports  # when I am reported by a survivor
+	has_many :reporteds, class_name: "Report", foreign_key: :reporter_id, inverse_of: :reporter # when I report another survivor
 	has_many :inventories
 	has_many :trade_inventories, -> { where.not(trade: nil) }, class_name: "Inventory"
 	has_one :my_stash, -> { where(trade: nil) }, class_name: "Inventory"
@@ -19,7 +19,7 @@ class Survivor < ApplicationRecord
   validates :lng, numericality: { greater_than_or_equal_to: -180, less_than_or_equal_to: 180 }
 
   def infected
-  	self.reporteds.size >= 3  	
+  	self.reports.size >= 3  	
   end
 
   def personal_stash=(stash_json) # custom method to receive a user's personal stash on registration
