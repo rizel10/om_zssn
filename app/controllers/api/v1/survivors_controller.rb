@@ -3,13 +3,18 @@ class Api::V1::SurvivorsController < Api::V1::BaseController
 	def create
     require_parameters([:name, :age, :gender, :lat, :lng])
     @survivor = Survivor.create!(survivor_params)
-    render json: @survivor
+    render json: @survivor, status: :created
   end
 
   def update
     @survivor = Survivor.find(params[:id])
     @survivor.update!(location_params)
     render json: @survivor
+  end
+
+  def index
+    @survivors = Survivor.all.page(params[:page])
+    render json: @survivors
   end
 
   ###
