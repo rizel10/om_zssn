@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(version: 20180322221311) do
     t.integer "age", null: false
     t.integer "gender", null: false
     t.integer "reports_count"
-    t.decimal "lat", precision: 10, scale: 6
-    t.decimal "lng", precision: 10, scale: 6
+    t.decimal "lat", precision: 10, scale: 6, null: false
+    t.decimal "lng", precision: 10, scale: 6, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
