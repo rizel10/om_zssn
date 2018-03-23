@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  survivor: one
+  item: one
+  amount: 1
+
+two:
+  survivor: two
+  item: two
+  amount: 1

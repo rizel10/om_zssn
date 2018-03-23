@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  survivor_1: one
+  survivor_2: one
+
+two:
+  survivor_1: two
+  survivor_2: two
