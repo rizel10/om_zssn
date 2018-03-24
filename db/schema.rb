@@ -60,15 +60,12 @@ ActiveRecord::Schema.define(version: 20180322221311) do
   end
 
   create_table "trades", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "survivor_1_id", null: false
-    t.bigint "survivor_2_id", null: false
-    t.boolean "survivor_1_accepted", default: false
-    t.boolean "survivor_2_accepted", default: false
-    t.integer "status", default: 0, null: false
+    t.bigint "inventory_1_id", null: false
+    t.bigint "inventory_2_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["survivor_1_id"], name: "index_trades_on_survivor_1_id"
-    t.index ["survivor_2_id"], name: "index_trades_on_survivor_2_id"
+    t.index ["inventory_1_id"], name: "index_trades_on_inventory_1_id"
+    t.index ["inventory_2_id"], name: "index_trades_on_inventory_2_id"
   end
 
   add_foreign_key "inventories", "survivors"

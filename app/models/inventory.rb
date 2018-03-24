@@ -24,9 +24,19 @@ class Inventory < ApplicationRecord
   accepts_nested_attributes_for :survivor_items
 
   validates :total_value, numericality: { greater_than_or_equal_to: 0 }
+  validate :consistent_amounts, if: :trade
 
   # Callbacks
   before_save :update_total_value
+
+  def consistent_amounts
+    Item.item_types.keys.each do |i_type|    
+      if self.send(i_type) > self.survivor.my_stash.send(i_type)
+        errors.add(i_type.to_sym, "amount is inconsistent")
+        return false
+      end
+    end
+  end
 
   def update_total_value
   	val = 0
