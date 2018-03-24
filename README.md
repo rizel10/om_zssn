@@ -34,4 +34,4 @@ I Used Postman (https://www.getpostman.com/) to navigate and perform tests on th
 Here is the published Postman [Documentation](https://documenter.getpostman.com/view/630023/zombie-social-survival-network/RVtvpsRx) and [Collection](https://www.getpostman.com/collections/22eafd87b519583b2264)
 
 ## Personal Considerations
-By now there are still a few things to fix, but the API is neat (although by now it still lacks automated tests)
+By now there are still a few things to fix, but the API is neat (although it still lacks automated tests)
