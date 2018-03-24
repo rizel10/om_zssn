@@ -14,6 +14,13 @@ gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem 'puma', '~> 3.7'
 # gem 'capistrano-rails', group: :development
 
+# Use Pundit for authorization
+gem 'pundit'
+# Use serializers to standartize json objects returned to users
+gem 'active_model_serializers'
+# Use kaminari to paginate objects
+gem 'kaminari'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

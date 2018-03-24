@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  survivor: one
+  trade: one
+
+two:
+  survivor: two
+  trade: two
