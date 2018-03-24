@@ -1,24 +1,37 @@
-# README
+# Zombie Social Survival Network
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting started
 
-Things you may want to cover:
+Clone project on any folder
 
-* Ruby version
+This project uses bundler
 
-* System dependencies
+```ruby
+gem install bundler
+```
+Then run `bundle install`
 
-* Configuration
+Create a `config/database.yml` file (there is an example at config folder) and a database for the application
 
-* Database creation
+Next, run this task to set things up:
 
-* Database initialization
+```console
+$ rake db:create db:migrate db:seed
+```
 
-* How to run the test suite
+This will run all migrations and populate the database with bunch of initial item types.
 
-* Services (job queues, cache servers, search engines, etc.)
+To start the server run
 
-* Deployment instructions
+```console
+$ rails s
+```
 
-* ...
+### Navigating through the api
+
+I Used Postman (https://www.getpostman.com/) to navigate and perform tests on the API.
+
+Here is the published Postman [Documentation](https://documenter.getpostman.com/view/630023/zombie-social-survival-network/RVtvpsRx) and [Collection](https://www.getpostman.com/collections/22eafd87b519583b2264)
+
+## Personal Considerations
+By now there are still a few things to fix, but the API is neat (although by now it still lacks automated tests)

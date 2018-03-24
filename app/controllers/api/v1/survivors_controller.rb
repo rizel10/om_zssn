@@ -13,8 +13,9 @@ class Api::V1::SurvivorsController < Api::V1::BaseController
   end
 
   def index
-    @survivors = Survivor.includes(inventories: [survivor_items: :item]).all.page(params[:page]) #TODO: Eager loading isn't working properly on this request because of how inventory serializer works
+    @survivors = Survivor.includes(inventories: [survivor_items: :item]).all.page(params[:page])
     render json: @survivors
+    #TODO: Eager loading isn't working properly on this request because of how inventory serializer works
   end
 
   ###
