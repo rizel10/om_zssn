@@ -8,6 +8,7 @@ class CreateSurvivors < ActiveRecord::Migration[5.1]
       # Decimals
       t.decimal :lat, null: true, precision: 10, scale: 6, null: false
       t.decimal :lng, null: true, precision: 10, scale: 6, null: false
+      t.integer :reports_count, null: false, default: 0
 
       t.timestamps
     end

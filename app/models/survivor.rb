@@ -19,7 +19,11 @@ class Survivor < ApplicationRecord
   validates :lng, numericality: { greater_than_or_equal_to: -180, less_than_or_equal_to: 180 }
 
   def infected
-  	self.reports.size >= 3  	
+  	self.reports_count >= 3  	
+  end
+
+  def infected?
+  	infected
   end
 
   def personal_stash=(stash_json) # custom method to receive a user's personal stash on registration
